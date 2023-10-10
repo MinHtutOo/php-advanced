@@ -3,10 +3,10 @@ namespace App\Controllers;
 
 class BaseController
 {
-    public function show()
-    {
-        echo "I am show method of " . __CLASS__ . " class.";
-    }
+    // public function __construct()
+    // {
+    //     echo "I am Parent Constructor!<br>";
+    // }
 }
 
 ?>
