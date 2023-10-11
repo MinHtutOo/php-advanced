@@ -1,12 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Welcome to E-commerce</title>
-</head>
-<body>
-    <h3>Welcome Blade</h3>
-    <img src="<?php echo URL_ROOT . '/assets/images/coffee1.jpg' ?>" alt="">
-</body>
-</html><?php /**PATH C:\xampp\htdocs\E-Commerce\resources\views/welcome.blade.php ENDPATH**/ ?>
+<?php $__env->startSection('title', 'E-commerce'); ?>
+
+<?php $__env->startSection('content'); ?>
+
+<h2>Hello World</h2>
+
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('layout.master', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\xampp\htdocs\E-Commerce\resources\views/welcome.blade.php ENDPATH**/ ?>

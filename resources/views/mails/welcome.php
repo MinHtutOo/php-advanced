@@ -9,11 +9,13 @@
             line-height: 150px;
             color: navy;
             background: #dedede;
+            text-align: center;
         }
     </style>
 </head>
 <body>
     <h1>Welcome Message From Coder</h1>
+    <img src="<?php echo $img_link;?>" alt="">
     <?php echo $content; ?>
 </body>
 </html>
