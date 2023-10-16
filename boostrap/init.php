@@ -5,7 +5,7 @@ use App\Classes\ErrorHandler;
 
 if(!isset($_SESSION)) session_start();
 define("APP_ROOT",realpath(__DIR__."/../"));
-define("URL_ROOT", "https://basic.com/E-Commerce/public/");
+define("URL_ROOT", "http://localhost/E-Commerce/public/");
 
 require_once APP_ROOT . "/vendor/autoload.php";
 

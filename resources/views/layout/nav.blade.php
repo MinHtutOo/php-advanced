@@ -2,7 +2,8 @@
     <nav class="navbar navbar-expand-lg navbar-light ">
         <div class="container">
             <a class="navbar-brand text-white english" href="#">
-                <span>Navbar</span>
+                <img src="{{asset("images/logo.png")}}" alt="" width="30" height="30" class="rounded">
+                <span class="ms-3">Online Shop</span>
             </a>
             <button class="navbar-toggler english" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
             <i class="fa fa-list text-white"></i>
@@ -13,7 +14,7 @@
                 <a class="nav-link active text-white english" aria-current="page" href="<?php echo URL_ROOT; ?>">Home</a>
                 </li>
                 <li class="nav-item">
-                <a class="nav-link text-white english" href="<?php echo URL_ROOT . 'admin/category'; ?>">Category</a>
+                <a class="nav-link text-white english" href="<?php echo URL_ROOT . 'admin'; ?>">Admin</a>
                 </li>
                 <li class="nav-item">
                 <a class="nav-link text-white english" href="#">Pricing</a>

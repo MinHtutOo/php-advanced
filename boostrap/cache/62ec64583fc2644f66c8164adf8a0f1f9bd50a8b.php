@@ -1,15 +1,14 @@
-@extends('layout.master')
+<?php $__env->startSection('title', 'Category Create'); ?>
 
-@section('title', 'Category Create')
-
-@section('content')
+<?php $__env->startSection('content'); ?>
 
 <div class="container my-5">
     <h1 class="text-primary text-center">Create Category</h1>
 
-    @if(\App\Classes\Session::has("error"))
-        {{\App\Classes\Session::flash("error")}}
-    @endif
+    <?php if(\App\Classes\Session::has("error")): ?>
+        <?php echo e(\App\Classes\Session::flash("error")); ?>
+
+    <?php endif; ?>
         <div class="col-md-8 offset-md-2">
             <!-- Form_Start -->
             <form action="<?php echo URL_ROOT . 'admin/category/create'; ?>" method="post" enctype="multipart/form-data">
@@ -23,7 +22,7 @@
                     <input type="file" class="form-control" id="file" name="file">
                 </div>
 
-                <input type="hidden" name="token" value="{{App\Classes\CSRFToken::_token()}}">
+                <input type="hidden" name="token" value="<?php echo e(App\Classes\CSRFToken::_token()); ?>">
 
                 <div class="row no-gutters py-2">
                     <div class="d-grid gap-2 d-md-flex justify-content-md-end">
@@ -34,9 +33,11 @@
             <!-- Form_End -->
         </div>
     </div>
-@endsection
+<?php $__env->stopSection(); ?>
     
 
     
     
 
+
+<?php echo $__env->make('layout.master', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\xampp\htdocs\E-Commerce\resources\views//admin/category/create.blade.php ENDPATH**/ ?>

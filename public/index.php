@@ -2,9 +2,9 @@
 
 // use App\Classes\Mail;
 
+use App\Classes\Session;
+
 require_once "../boostrap/init.php";
-
-
 
 /* mail function
 $mailer = new Mail();
