@@ -6,5 +6,4 @@
     <li class="list-group-item">
         <a href="admin/category/create" style="text-decoration: none;color:darkblue;">Create Category</a>
     </li>
-  
 </ul>

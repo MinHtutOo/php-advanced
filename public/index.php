@@ -3,10 +3,34 @@
 // use App\Classes\Mail;
 
 use App\Classes\Session;
+use App\Classes\ValidateRequest;
 
 require_once "../boostrap/init.php";
 
-/* mail function
+/* check validation start
+$post = [
+    "name"=>"Bruce Lee",
+    "age"=>20,
+    "email"=>"tester1@gmail.com"
+];
+
+$policy = [
+    "name" => ["string"=>true, "minLength"=>"5"],
+    "age" => ["number"=>true, "minLength"=>"2"],
+    "email"=> ["email"=>true, "maxLength"=> "25"]
+];
+
+$validator = new ValidateRequest();
+$validator->checkVaidate($post,$policy);
+
+if($validator->hasError()) {
+    beautify($validator->getErrors());
+}else {
+    echo "Good To Go!";
+}
+check validation end */
+
+/* mail function start
 $mailer = new Mail();
 $content = "Hello! The PHP mail() function usually sends via a local mail server, typically fronted by a sendmail binary on Linux, BSD, 
         and macOS platforms, however, Windows usually doesn't include a local mail server; PHPMailer's integrated SMTP client allows email sending on all platforms without needing a local mail server. 
@@ -24,7 +48,7 @@ $data = [
 //     echo "<br><h1>Mail Send Successfully</h1>";
 // else
 //     echo "<br><h1>Mail Send Fail</h1>";
-*/
+mail function end*/
 
 
 

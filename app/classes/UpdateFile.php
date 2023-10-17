@@ -4,10 +4,9 @@ namespace App\Classes;
 
 class UpdateFile
 {
-    protected $filename;
     protected $maxSize = 2097152;
 
-    public function setName($file,$name="")
+    public function getName($file,$name="")
     {
         if($name === "") {
             $name = pathinfo($file->file->tmp_name, PATHINFO_FILENAME);
@@ -15,12 +14,7 @@ class UpdateFile
         $name = strtolower(str_replace(["_"," "], "-",$name));
         $hash = md5(microtime());
         $ext = pathinfo($file->file->name, PATHINFO_EXTENSION);
-        $this->filename = "{$name}-{$hash}.{$ext}";
-    }
-
-    public function getName()
-    {
-        return $this->filename;
+        return "{$name}-{$hash}.{$ext}";
     }
 
     public function checkSize($file)
@@ -38,8 +32,21 @@ class UpdateFile
 
     public function move($file, $file_name="")
     {
-        $this->setName($file);
-        return $this->isImage($file);
+        $name = $this->getName($file);
+        if($this->isImage($file)) {
+            if(!$this->checkSize($file)) {
+                $path = APP_ROOT . "/public/assets/uploads/";
+                if(!is_dir($path)) {
+                    mkdir($path);
+                }
+                $file_path = $path . $name;
+                return move_uploaded_file($file->file->tmp_name,$file_path);
+            } else {
+                return "File Size Exceeded!";
+            }
+        } else {
+            return "Only Image File Are Accepted!";
+        }
     }
 }
 

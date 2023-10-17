@@ -8,7 +8,7 @@ function view($path, $data = [])
     $cache = APP_ROOT . "/boostrap/cache/";
 
     $blade = new Blade($view, $cache);
-    echo $blade->view()->make($path)->render();
+    echo $blade->view()->make($path, $data)->render();
 }
 
 function make($filename,$data)
@@ -34,6 +34,13 @@ function beautify($data)
 function asset($link)
 {
     echo URL_ROOT . '/assets/' . $link;
+}
+
+function slug($value)
+{
+    $value = preg_replace('/[^'. preg_quote('_') . '\pL\pN\s]+/u' , "", mb_strtolower($value));
+    $value = preg_replace('/[ _]+/u', '-', $value);
+    return $value;
 }
 
 ?>
