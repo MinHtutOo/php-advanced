@@ -1,6 +1,9 @@
 <?php
 
+use Carbon\Carbon;
 use Philo\Blade\Blade;
+use Illuminate\Database\Capsule\Manager as Capsule;
+use voku\helper\Paginator;
 
 function view($path, $data = [])
 {
@@ -41,6 +44,18 @@ function slug($value)
     $value = preg_replace('/[^'. preg_quote('_') . '\pL\pN\s]+/u' , "", mb_strtolower($value));
     $value = preg_replace('/[ _]+/u', '-', $value);
     return $value;
+}
+
+function paginate($num_of_record,$total_record,$object)
+{
+    
+    $pages = new Paginator($num_of_record, 'p');
+    $categories = $object->genPaginate($pages->get_limit());
+    $pages->set_total($total_record);
+
+    
+    return [$categories,$pages->page_links()];
+    
 }
 
 ?>

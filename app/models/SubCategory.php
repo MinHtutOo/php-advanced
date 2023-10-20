@@ -3,13 +3,11 @@
 namespace App\Models;
 
 use Carbon\Carbon;
-use Illuminate\Database\Capsule\Manager as Capsule;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Capsule\Manager as Capsule;
 
-class Category extends Model
+class SubCategory extends Model
 {
-    protected $fillable = ["name", "slug"];
-
     public function genPaginate($limit)
     {
         $table = $this->getTable();
@@ -20,14 +18,12 @@ class Category extends Model
             array_push($categories, [
                 "id" => $category->id,
                 "name" => $category->name,
-                "slug" => $category->slug,
+                "cat_id" => $category->cat_id,
                 "created" => $date->toFormattedDateString()
             ]);
         }
         return $categories;
     }
-
-    
 }
 
 ?>

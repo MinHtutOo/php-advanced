@@ -4,6 +4,7 @@
 
 use App\Classes\Session;
 use App\Classes\ValidateRequest;
+use App\Controllers\CategoryController;
 
 require_once "../boostrap/init.php";
 

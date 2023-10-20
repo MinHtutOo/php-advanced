@@ -11,12 +11,13 @@
 </head>
 <body>
 
-<?php echo $__env->make('layout.nav', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
+    <?php echo $__env->make('layout.nav', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
 
-<?php echo $__env->yieldContent('content'); ?>;
+    <?php echo $__env->yieldContent('content'); ?>
 
     <script src="<?php echo e(asset('js/app.js')); ?>"></script>
     <script src="<?php echo e(asset('js/jquery.js')); ?>"></script>
-    <script src="<?php echo e(asset('js/tether.min.js')); ?>"></script>
+    <?php echo $__env->yieldContent('script'); ?>
+
 </body>
 </html><?php /**PATH C:\xampp\htdocs\E-Commerce\resources\views/layout/master.blade.php ENDPATH**/ ?>
