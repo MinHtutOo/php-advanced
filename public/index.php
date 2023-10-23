@@ -8,6 +8,7 @@ use App\Controllers\CategoryController;
 
 require_once "../boostrap/init.php";
 
+
 /* check validation start
 $post = [
     "name"=>"Bruce Lee",

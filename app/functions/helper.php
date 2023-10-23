@@ -36,7 +36,7 @@ function beautify($data)
 
 function asset($link)
 {
-    echo URL_ROOT . '/assets/' . $link;
+    echo URL_ROOT . 'assets/' . $link;
 }
 
 function slug($value)

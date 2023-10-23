@@ -2,7 +2,7 @@
 
 namespace App\Classes;
 
-class UpdateFile
+class UploadFile
 {
     protected $maxSize = 2097152;
 

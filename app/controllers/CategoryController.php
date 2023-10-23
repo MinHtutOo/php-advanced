@@ -6,7 +6,7 @@ use App\Classes\CSRFToken;
 use App\Classes\Redirect;
 use App\Classes\Request;
 use App\Classes\Session;
-use App\Classes\UpdateFile;
+use App\Classes\UploadFile;
 use App\Classes\ValidateRequest;
 use App\Models\Category;
 use App\Models\SubCategory;
@@ -66,7 +66,7 @@ class CategoryController extends BaseController
             }
             // beautify(Request::all());
             // echo "<hr>";
-            // $updateFile = new UpdateFile();
+            // $uploadFile = new UploadFile();
             // var_dump($updateFile->move(Request::get("file")));
         }else {
             Session::flash("error", "CSRF Field Error");
@@ -94,13 +94,13 @@ class CategoryController extends BaseController
         if(CSRFToken::checkToken($post->token)) {
 
             $rules = [
-                "name" => ["required"=>true, "minLength"=>"5", "unique"=>"categories"]
+                "name" => ["require"=>true, "minLength"=>"5", "unique"=>"categories"]
             ];
 
             $validator = new ValidateRequest();
             $validator->checkVaidate($post, $rules);
 
-            if($validator->hasError()) {
+            if($validator->getErrors()) {
                 header('HTTP/1.1 422 Validation Error!', true, 422);
                 $errors = $validator->getErrors();
                 echo json_encode($errors);
