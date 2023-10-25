@@ -5,6 +5,7 @@ namespace App\Classes;
 class UploadFile
 {
     protected $maxSize = 2097152;
+    protected $path;
 
     public function getName($file,$name="")
     {
@@ -30,6 +31,11 @@ class UploadFile
         return in_array($ext, $validExt);
     }
 
+    public function getPath()
+    {
+        return $this->path;
+    }
+
     public function move($file, $file_name="")
     {
         $name = $this->getName($file);
@@ -39,13 +45,16 @@ class UploadFile
                 if(!is_dir($path)) {
                     mkdir($path);
                 }
+                $this->path = URL_ROOT . "assets/uploads/" . $name;
                 $file_path = $path . $name;
                 return move_uploaded_file($file->file->tmp_name,$file_path);
             } else {
                 return "File Size Exceeded!";
+                // return "False";
             }
         } else {
             return "Only Image File Are Accepted!";
+            // return "wrong";
         }
     }
 }

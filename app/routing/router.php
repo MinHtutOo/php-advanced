@@ -30,7 +30,19 @@ $router->setBasePath("/E-Commerce/public");
     $router->map("GET", "/admin/product/create", "App\Controllers\ProductController@create","Product Create");
 
     $router->map("POST", "/admin/product/create", "App\Controllers\ProductController@store","Product Store");
+
+    $router->map("GET", "/admin/product/[i:id]/edit", "App\Controllers\ProductController@edit","Product Edit");
+
+    $router->map("POST", "/admin/product/[i:id]/edit", "App\Controllers\ProductController@update","Product Update");
+
+    $router->map("GET", "/admin/product/[i:id]/delete", "App\Controllers\ProductController@delete","Product Delete");
 # Product End
+
+# Cart Start
+    $router->map("POST", "/cart", "App\Controllers\IndexController@cart","Cart Route");
+
+    $router->map("GET", "/cart", "App\Controllers\IndexController@showCart","Show Cart");
+# Cart End
 
 new \App\Routing\RouteDispatcher($router);
 

@@ -4,38 +4,6 @@
 
 @section('content')
 
-    <style>
-        .pagination > li {
-            padding: 5px 15px;
-            background: #dedede;
-            color: #2C3E50;
-            margin-right:1px;
-        } 
-
-        .pagination > li:hover {
-            background:#C7C9CC ;
-        }
-
-        .pagination > li > a {
-            text-decoration: none;
-            color: darkblue;
-        }
-
-        #editor,#plus {
-            cursor: pointer;
-        }
-
-        i {
-            margin-left: 5px;
-        }
-
-        #plus {
-            margin-right: 3px;
-        }
-
-        
-    </style>
-
 <div class="container my-5">
     <h1 class="text-primary text-center">Create Category</h1>
         <div class="row">

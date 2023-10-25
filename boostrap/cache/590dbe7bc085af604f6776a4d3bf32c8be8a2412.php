@@ -17,6 +17,7 @@
 
     <script src="<?php echo e(asset('js/jquery.js')); ?>"></script>
     <script src="<?php echo e(asset('js/app.js')); ?>"></script>
+    <script src="<?php echo e(asset('js/custom.js')); ?>"></script>
     <?php echo $__env->yieldContent('script'); ?>
 
 </body>

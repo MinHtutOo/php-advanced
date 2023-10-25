@@ -65,7 +65,7 @@
                             <textarea class="form-control" id="description" name="description" rows="3"></textarea>
                         </div>
 
-                        <input type="hidden" name="token" value="{{\App\Classes\CSRFToken::_token()}}">
+                        <input type="hidden" name="token" value="{{App\Classes\CSRFToken::_token()}}">
 
                         <div class="d-grid gap-2 d-md-flex justify-content-md-end">
                             <button type="reseet" class="btn btn-outline-secondary" type="button">Cancel</button>

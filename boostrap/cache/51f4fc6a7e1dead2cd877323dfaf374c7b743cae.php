@@ -17,7 +17,10 @@
                 <a class="nav-link text-white english" href="<?php echo URL_ROOT . 'admin'; ?>">Admin</a>
                 </li>
                 <li class="nav-item">
-                <a class="nav-link text-white english" href="#">Pricing</a>
+                    <a class="nav-link text-white english" href="<?php echo URL_ROOT . 'cart'; ?>">
+                        Cart
+                        <span class="translate-middle badge rounded-pill bg-danger" id="badge">0</span>
+                    </a>
                 </li>
                 <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle text-white english" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">

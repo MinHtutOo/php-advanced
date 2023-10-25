@@ -47,7 +47,11 @@ class Session
         if(!empty($value)) {
             self::replace($key,$value);
         }else {
-            echo "<p class='alert alert-success'>" . self::get($key) . "</p>";
+            echo '<div class="alert alert-success alert-dismissible fade show" role="alert">
+                    <strong>'.self::get($key).'</strong>
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>';
+            // echo "<p class='alert alert-success'>" . self::get($key) . "</p>";
             self::remove($key);
         }
     }

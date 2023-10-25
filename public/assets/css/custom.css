@@ -2,3 +2,80 @@
     font-family: Cambria;
 }
 
+.pagination > li {
+    padding: 5px 15px;
+    background: #dedede;
+    color: #2C3E50;
+    margin-right:1px;
+} 
+
+.pagination > li:hover {
+    background:#C7C9CC ;
+}
+
+.pagination > li > a {
+    text-decoration: none;
+    color: darkblue;
+}
+
+#editor,#plus {
+    cursor: pointer;
+}
+
+i {
+    margin-left: 5px;
+}
+
+#plus {
+    margin-right: 3px;
+}
+
+th {
+    color: darkblue;
+}
+
+td {
+    color: #2d649f;
+}
+
+a {
+    text-decoration: none;
+}
+
+.edit {
+    border: 1px solid #FFCC00;
+    border-radius: 5px;
+    margin: 3px;
+}
+
+.delete {
+    border: 1px solid red;
+    border-radius: 5px;
+    margin: 3px;
+}
+
+#edit,#trash {
+    padding: 5px;
+}
+
+#edit > .space, #trash > .space {
+    margin-left: 3px;
+}
+
+.card-body {
+    height: 250px;
+    background-position: center;
+    background-size: cover;
+
+}
+
+#eye, #cart {
+    margin-left: 0px;
+    color: azure;
+}
+
+#badge {
+    position: relative;
+    top: -7px;
+    left: 1px;
+}

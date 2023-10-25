@@ -17,6 +17,7 @@
 
     <script src="{{asset('js/jquery.js')}}"></script>
     <script src="{{asset('js/app.js')}}"></script>
+    <script src="{{asset('js/custom.js')}}"></script>
     @yield('script')
 
 </body>

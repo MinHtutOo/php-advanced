@@ -36,12 +36,18 @@ class CategoryController extends BaseController
             $validator = new ValidateRequest();
             $validator->checkVaidate($post,$rules);
             if($validator->hasError()) {
-                
+                $cats = Category::all();
+                $sub_cats = SubCategory::all();
                 $errors = $validator->getErrors();
+
                 $categories = Category::all()->count();
                 list($cats,$pages) = paginate(3, $categories, new Category());
                 $cats = json_decode(json_encode($cats));
-                view("admin/category/create", compact('cats', 'errors', 'pages'));
+
+                $subcategories = SubCategory::all()->count();
+                list($sub_cats,$sub_pages) = paginate(3, $subcategories, new SubCategory());
+                $sub_cats = json_decode(json_encode($sub_cats));
+                view("admin/category/create", compact('cats', 'pages', 'sub_cats', 'sub_pages', 'errors'));
             } else {
                 $slug = slug($post->name);
 
@@ -55,7 +61,11 @@ class CategoryController extends BaseController
                     $categories = Category::all()->count();
                     list($cats,$pages) = paginate(3, $categories, new Category());
                     $cats = json_decode(json_encode($cats));
-                    view("admin/category/create", compact('cats', 'success', 'pages'));
+
+                    $subcategories = SubCategory::all()->count();
+                    list($sub_cats,$sub_pages) = paginate(3, $subcategories, new SubCategory());
+                    $sub_cats = json_decode(json_encode($sub_cats));
+                    view("admin/category/create", compact('cats', 'sub_cats', 'success', 'pages', 'sub_pages'));
                 }else {
                     $errors = "Category Created Fail";
                     $categories = Category::all()->count();
