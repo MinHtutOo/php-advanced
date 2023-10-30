@@ -11,17 +11,40 @@ function addToCart(num) {
         }
     }
     alert("Item Already Added To Cart");
-    getCartItem();
+    showCartItem();
     
+}
+
+function showCartItem() {
+    let ary = JSON.parse(localStorage.getItem("items"));
+    if(ary != null) {
+        $("#badge").html(ary.length);
+    }else {
+        $("#badge").html(0);
+    }
 }
 
 function getCartItem() {
     let ary = JSON.parse(localStorage.getItem("items"));
-    $("#badge").html(ary.length);
+    return ary;
+}
+
+function deleteItem(id) {
+    var ary = JSON.parse(localStorage.getItem("items"));
+    if(ary != null) {
+        ary.forEach((item) => {
+            if(item == id) {
+                var ind = ary.indexOf(item);
+                ary.splice(ind,1);
+            }  
+        })
+    }
+    localStorage.setItem("items", JSON.stringify(ary));
+    showCartItem();
 }
 
 function clearCart() {
     localStorage.removeItem("items");
 }
 
-getCartItem();
+showCartItem();

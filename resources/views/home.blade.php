@@ -12,14 +12,12 @@
                 <div class="card mb-3">
                     <div class="card-header text-center">{{$product->name}}</div>
                     <div class="card-body" style="background-image: url('{{$product->image}}');">
-                        <!-- <img src="{{$product->image}}" class="image img-fluid mx-auto" alt=""> -->
-                        
                     </div>
                     <div class="card-footer">
                         <div class="d-flex justify-content-between">
-                            <button class="btn btn-info btn-sm">
+                            <a href="/E-Commerce/public/product/{{$product->id}}/detail" class="btn btn-info btn-sm">
                                 <i class="fa fa-eye" id="eye"></i>
-                            </button>
+                            </a>
 
                             <span>${{$product->price}}</span>
                             
@@ -48,13 +46,13 @@
                     </div>
                     <div class="card-footer">
                         <div class="d-flex justify-content-between">
-                            <button class="btn btn-info btn-sm">
+                        <a href="/E-Commerce/public/product/{{$product->id}}/detail" class="btn btn-info btn-sm">
                                 <i class="fa fa-eye" id="eye"></i>
-                            </button>
+                            </a>
 
                             <span>${{$product->price}}</span>
                             
-                            <button class="btn btn-info btn-sm text-center" onclick="loadProduct('{{$product->id}}')">
+                            <button class="btn btn-info btn-sm text-center" onclick="addToCart('{{$product->id}}')">
                                 <i class="fa fa-shopping-cart" id="cart"></i>
                             </button>
                         </div>

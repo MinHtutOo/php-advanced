@@ -32,7 +32,7 @@
                                     <th scope="row"><?php echo e($product->id); ?></th>
                                     <td><img src="<?php echo e($product->image); ?>" class="img-fluid" style="max-width:100px; max-height:150px;"></td>
                                     <td><?php echo e($product->name); ?></td>
-                                    <td><?php echo e($product->price); ?></td>
+                                    <td>$<?php echo e($product->price); ?></td>
                                     <td>
                                         <a href="/E-Commerce/public/admin/product/<?php echo e($product->id); ?>/edit" class="edit">
                                             <i class="fa fa-edit text-warning" id="edit"><span class="space">Edit</span></i>
