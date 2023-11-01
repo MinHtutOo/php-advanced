@@ -3,11 +3,13 @@
 <?php $__env->startSection('content'); ?>
 
     <div class="container my-5">
-        <div class="row">
+        <div class="d-flex">
             <div class="col-md-4">
                 <?php echo $__env->make("layout.admin_sidebar", \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
             </div>
-            <div class="col-md-8"></div>
+            <div>
+                <img src="<?php echo URL_ROOT . 'assets/images/eat.jpg'; ?>" alt="">
+            </div>
         </div>
     </div>
 

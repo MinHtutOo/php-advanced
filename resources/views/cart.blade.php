@@ -124,13 +124,13 @@
                         <img src='${result.image}' class='img-fluid' style='max-width:100px; max-height:150px;'>
                     </td>
                     <td>${result.name}</td>
-                    <td>${result.price}</td>
+                    <td><b>$</b>${result.price}</td>
                     <td class='text-center'>
                         <i class='fa fa-angle-left me-1' id='reduce' style='cursor:pointer;' onclick='reduceQty(${result.id})'></i>
                             ${result.qty}
                         <i class='fa fa-angle-right' id='add' style='cursor:pointer;' onclick='addQty(${result.id})'></i>
                     </td>
-                    <td>${(result.price * result.qty).toFixed(2)}
+                    <td><b>$</b>${(result.price * result.qty).toFixed(2)}
                     </td>
                     <td>
                         <i class='fa fa-trash text-danger' id='trash' style='cursor:pointer;' onclick='deleteProduct(${result.id})'><span class='space'>Delete</span></i>
@@ -140,8 +140,8 @@
             });
             str += `
                     <tr>
-                        <td colspan="6" class=text-end>Grand Total</td>
-                        <td>${total.toFixed(2)}</td>
+                        <td colspan="5" class=text-end>Grand Total</td>
+                        <td colspan="2"><b>$</b>${total.toFixed(2)}</td>
                     </tr>
                 `
             $('#table_body').html(str);

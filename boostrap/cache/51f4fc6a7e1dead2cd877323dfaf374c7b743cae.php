@@ -1,8 +1,8 @@
 <div class="container-fluid bg-dark">
     <nav class="navbar navbar-expand-lg navbar-light ">
         <div class="container">
-            <a class="navbar-brand text-white english" href="#">
-                <img src="<?php echo e(asset("images/logo.png")); ?>" alt="" width="30" height="30" class="rounded">
+            <a class="navbar-brand text-white english" href="<?php echo URL_ROOT; ?>">
+                <img src="<?php echo e(asset("images/logo.jpg")); ?>" alt="" width="30" height="30" class="rounded">
                 <span class="ms-3">Food Paradise</span>
             </a>
             <button class="navbar-toggler english" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">

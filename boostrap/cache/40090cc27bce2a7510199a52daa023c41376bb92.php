@@ -11,6 +11,7 @@
     <script>
         localStorage.removeItem('products');
         localStorage.removeItem('items');
+        localStorage.getItem('products');
     </script>
 <?php $__env->stopSection(); ?>
 <?php echo $__env->make("layout.master", \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\xampp\htdocs\E-Commerce\resources\views/payment_success.blade.php ENDPATH**/ ?>
