@@ -35,10 +35,10 @@
                         <td colspan="7" class="text-end">
                             <form action="/E-commerce/public/payment/stripe" method="post" style="display: none;" id="stripeForm">
                             <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-                                data-key="{{App\Classes\Session::get("publishable_key")}}"
+                                data-key="{{App\Classes\Session::get('publishable_key')}}"
                                 data-name="Lets Bite"
                                 data-description="Not like others.Taste better!"
-                                data-amount="5000"
+                                data-amount="50000"
                                 data-email="{{App\Classes\Auth::user()->email}}"
                                 data-zip-code="true"
                                 data-locale="auto"></script>

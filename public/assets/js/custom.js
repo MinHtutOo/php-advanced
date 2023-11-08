@@ -10,7 +10,7 @@ function addToCart(num) {
             localStorage.setItem("items", JSON.stringify(ary));
         }
     }
-    alert("Item Already Added To Cart");
+    alert("Item added successfully");
     showCartItem();
     
 }
